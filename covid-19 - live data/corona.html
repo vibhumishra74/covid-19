@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>corona</title>
+</head>
+<body>
+    <h1>hello word</h1>
+    <table class="table">
+        <thead>                                              
+          <tr>
+            <th  scope="col">NewConfirmed</th>
+            <th scope="col">TotalConfirmed</th>
+            <th scope="col">TotalDeaths</th>
+            <th scope="col">NewRecovered</th>
+            <th scope="col">TotalRecovered</th>
+          </tr>
+        </thead>
+        <tbody id="global_wise">
+        </tbody>
+      </table>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $.ajax({
+        url : "https://api.covid19api.com/summary",
+        type : "GET",
+        // dataType : "JSON",
+        success : function(data){
+        console.log(data.Countries);
+        console.log(data.Global.NewRecovered);
+        $.each(data.Countries,function(key,value){
+            // console.log(key+" =>"+value);
+        //    $("#global_wise").append("<tr><td>"+key+"</td><td>"+value+"</td></tr>")
+        // })
+           $("#global_wise").append("<tr>"+
+                                        "<td>" + value.Country + "</td>"+
+                                        "<td>" + value.NewConfirmed + "</td>"+
+                                        "<td>" + value.TotalConfirmed + "</td>"+
+                                        "<td>" + value.TotalDeaths + "</td>"+
+                                        "<td>" + value.NewRecovered + "</td>"+
+                                        "<td>" + value.TotalRecovered + "</td>"+
+                                        "</tr>"
+           )
+        })
+        }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+html{
+    scroll-behavior: smooth;
+} 
+.row{
+    margin: 0px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Mulish', sans-serif;
+    
+}
+
+ .nav_style{
+     background-color: #a29bfe!important;
+ }
+ .nav_style a{
+     color: #fff;
+ }
+ /*//////////////// main_header////////////////// */
+  .main_header{
+      height: 450px;
+      width: 100%;
+  }
+
+   .rightside h1{
+       font-size: 3rem;
+   }
+
+    .corona_rotate img{ 
+        animation: gocorona 3s linear infinite;
+    }
+
+    @keyframes gocorona{
+        0% {
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+
+     .leftside img{
+         animation: popup 5s linear infinite;
+     }
+     @keyframes popup {
+         0%{ transform: scale(.90);}
+         20%{ transform: scale(1);}
+         40%{ transform: scale(.80);}
+         60%{ transform: scale(1);}
+         80%{ transform: scale(.80);}
+         100%{ transform: scale(1);}
+         
+     }
+
+     /*////////////////// corona_update///////////////// */
+      .corona_update{
+          margin: 0 0 30px 0;
+      }
+       .corona_update h3{
+           color: #ff7675;
+       }
+       .corona_update h1{
+           font-size: 2rem;
+           text-align: center;
+       }
+
+         /*////////////// about section///////////  */
+          .sub_section{
+              background-color: #fbfa;
+          }
+            /*////////////// contact us section///////////  */
+          #username{
+            color: red;
+            display: none;
+              }
+              #password{
+            color: red;
+            display: none;
+              }
+              #confirmpass{
+            color: red;
+            display: none;
+              }
+              #mobileno{
+            color: red;
+            display: none;
+              }
+              #emailid{
+            color: red;
+            display: none;
+              }
+              /* ////////////// top scroll///////// */
+              #mybtn{
+                  display: none;
+                  position: fixed;
+                  bottom: 30px;
+                  right: 40px;
+                  z-index: 99;
+                  border: none;
+                  outline: none;
+                  background-color: #00a8ff;
+                  color: #fff;
+                  cursor: pointer;
+                  padding: 10px;
+                  border-radius: 10px;
+              }
+              #mybtn:hover{
+                  background: #606060;
+              }
+  /* ////////////////footer///////// */
+  .footer_style{
+      background-color: #a29bfe;
+  }
+  .footer_style p{
+      margin-bottom: 0;
+  }
+
+  /* /////// reposibe////// */
+
+  @media(max-width:768px){
+      #virus{
+          margin: 0px!important;
+      }
+      .corona_update {
+       
+        margin: 160px 0 30px 0;
+    }
+    .count_update{
+        display: inline!important;
+        text-align: center;
+        /* margin: auto; */
+        /* justify-content: space-evenly; */
+    }
+  }
